@@ -1,0 +1,81 @@
+{% extends 'shop/basic.html'%}
+{% block title %} Sign in{% endblock %}
+{% block css %}
+<style>
+  .image_container{
+    float: left;
+  }
+
+  .entries{
+    float: right  ;
+  }
+</style>
+{% endblock %}
+{% block body%}
+{%load static%}
+<!-- <div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>My Awesome Cart!</strong> Welcome to Sign In Page
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div> -->
+
+
+
+<div class = "row">
+  <div class="col image_container">
+  <img class="rounded" src="{% static '/shop/cart_02.jpg'%}" alt="Background image" height="auto" width="auto">
+  </div>
+
+  <div class="col entries">
+    <form method="post" action="#" id="trackerForm">{% csrf_token %}
+      <div class="row">
+        <div class="col-11"> 
+          <center> <img src="{% static 'shop/user.png'%}" alt="user logo" height="100px" width="100px" class="rounded my-2"></center>
+
+          <label for="InputId" class="my-1">Username</label>
+          <input type="email" class="form-control my-2" id="email" name="email" placeholder="Username/email" aria-label="Order Id">
+
+          <label for="InputPassword" class="my-1">Email</label>
+          <input type="password" class="form-control my-2" id="password" name="password" placeholder="Password"  aria-label="Password">
+
+          <a href="#">Forget Password</a>
+        </div>
+      </div>
+      <div class="col-10 my-2 btns">
+        <button type="submit" class="btn btn-primary mx-1">Login</button>
+    </div>
+    <label  class="my-1">Don't have account?</label>
+    <br>
+    <a href="#" class=" my-2">Create one</a>
+    <br><br><br>
+    <form>
+      <tr>
+        <th>Or Sign Up Using</th>
+      </tr>
+      <br>
+      <tr>
+        
+        <center>
+        <td><a href="#"><img src="{%static 'shop/gmail.png'%}" alt="gmail_logo" height="35px" width="35px" class="rounded"></a></td>
+        <td><a href="#"><img src="{%static 'shop/facebook.png'%}" alt="gmail_logo" height="35px" width="35px" class="rounded"></a></td>
+        <td><a href="#"><img src="{%static 'shop/twitter.png'%}" alt="gmail_logo" height="35px" width="35px" class="rounded"></a></td>
+      </center>
+      </tr>
+    </form>
+</div>
+<!-- <div class="container col-8">
+  <div class="col-4 my-4">
+      <form method="post" action="#" id="trackerForm">{% csrf_token %}
+          <div class="row">
+            <div class="col mx-2 my-4">
+              <label for="InputId" class="my-1">Username</label>
+              <input type="email" class="form-control" id="email" name="email" placeholder="Username/email" aria-label="Order Id">
+
+              <label for="InputPassword" class="my-1">Email</label>
+              <input type="password" class="form-control" id="password" name="password" placeholder="********" aria-label="Password">
+            </div>
+          </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary mx-1">Login</button>
+          </div>
+  </div> -->
+{% endblock%}
