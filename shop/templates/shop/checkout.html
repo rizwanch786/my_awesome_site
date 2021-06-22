@@ -32,6 +32,7 @@
         <form method="post" action="/shop/checkout/">
             {% csrf_token %}
             <input type="hidden" name="itemsJson" id="itemsJson">
+            <input type="hidden" name="amount" id="amount">
             <div class="form-row">
                 <div class="form-group col-md-6 my-2">
                     <label for="inputname">Name</label>
@@ -110,10 +111,13 @@ document.getElementById('totalPrice').innerHTML = totalPrice;
 
 
 $('#itemsJson').val(JSON.stringify(cart));
+
 if ('{{thank}}'){
      alert("Thanks for ordering with us. Your order id is {{id}}. Use it to track your order using our order tracker")
      localStorage.clear();
      document.location="/shop";
 }
+
+$('#amount').val($('#totalPrice').html());
 </script>
 {%endblock%}
